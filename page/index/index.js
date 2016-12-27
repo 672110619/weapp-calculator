@@ -1,9 +1,9 @@
 Page({
   data: {
-    value: null,
-    displayValue: '0',
-    operator: null,
-    waitingForOperand: false
+    value: null, // 上次计算后的结果，null表示没有上次计算的结果
+    displayValue: '0', // 显示数值
+    operator: null, // 上次计算符号，null表示没有未完成的计算
+    waitingForOperand: false // 前一按键是否为计算符号
   },
 
   onLoad: function(options) {
@@ -15,15 +15,8 @@ Page({
       'key-equals': (prevValue, nextValue) => nextValue
     }
   },
-
-  onReady: function() {
-    // document.body.addEventListener('touchmove', function(evt) {
-    //   if(!evt._isScroller) {
-    //     evt.preventDefault()
-    //   }
-    // });
-  },
-
+  
+  /* AC操作，一下回到解放前 */
   clearAll() {
     this.setData({
       value: null,
@@ -33,6 +26,7 @@ Page({
     })
   },
 
+  /* 仅清空当前显示的输入值 */
   clearDisplay() {
     this.setData({
       displayValue: '0'
@@ -51,6 +45,7 @@ Page({
         }
 
         break;
+
       case 'key-sign':
         var newValue = parseFloat(this.data.displayValue) * -1
         
@@ -59,10 +54,8 @@ Page({
         })
 
         break;
+
       case 'key-percent':
-        if (this.data.currentValue === 0)
-          return
-        
         const fixedDigits = this.data.displayValue.replace(/^-?\d*\.?/, '')
         var newValue = parseFloat(this.data.displayValue) / 100
         
@@ -71,6 +64,7 @@ Page({
         });
 
         break;
+        
       default:
         break;
     }
