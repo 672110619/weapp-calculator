@@ -1,5 +1,5 @@
 <template name="calculator-key">
-  <button hover-start-time="{{20}}" hover-stay-time="{{20}}" hover-class="calculator-key-hover" data-key="{{className}}" class="calculator-key {{className}}">{{display}}</button>
+  <button hover-start-time="{{5}}" hover-stay-time="{{20}}" hover-class="calculator-key-hover" data-key="{{className}}" class="calculator-key {{className}}">{{display}}</button>
 </template>
 
 <view class="calculator">

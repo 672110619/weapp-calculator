@@ -16,6 +16,14 @@ Page({
     }
   },
 
+  onReady: function() {
+    // document.body.addEventListener('touchmove', function(evt) {
+    //   if(!evt._isScroller) {
+    //     evt.preventDefault()
+    //   }
+    // });
+  },
+
   clearAll() {
     this.setData({
       value: null,

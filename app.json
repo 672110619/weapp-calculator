@@ -4,7 +4,7 @@
   ],
   "window": {
     "navigationBarBackgroundColor": "#000",
-    "backgroundColor": "#fff",
+    "backgroundColor": "#000",
     "navigationBarBackgroundColor": "#000"
   },
   "networkTimeout": {
